@@ -17,7 +17,7 @@ import java.util.Optional;
 public class CourierTest extends AbstractTest{
 
     @Test
-    @Order(2)
+    @Order(3)
 
     void getCourier_whenValid_shouldReturn() throws SQLException {
         //given
@@ -35,7 +35,7 @@ public class CourierTest extends AbstractTest{
         Assertions.assertEquals(4, query.list().size());
     }
 
-    @Order(3)
+    @Order(4)
     @ParameterizedTest
     @CsvSource({"John, Rython", "Kate, Looran", "Bob, Kolaris"})
     void getCourierById_whenValid_shouldReturn(String name, String lastName) throws SQLException {
@@ -53,7 +53,7 @@ public class CourierTest extends AbstractTest{
     }
 
     @Test
-    @Order(1)
+    @Order(2)
     void addCourier_whenValid_shouldSave() {
         //given
         CourierInfoEntity entity = new CourierInfoEntity();
@@ -77,7 +77,7 @@ public class CourierTest extends AbstractTest{
     }
 
     @Test
-    @Order(4)
+    @Order(1)
     void deleteCourier_whenValid_shouldDelete() {
         //given
         final Query query = getSession()
