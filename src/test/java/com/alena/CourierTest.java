@@ -91,7 +91,7 @@ public class CourierTest extends AbstractTest{
         session.getTransaction().commit();
         //then
         final Query queryAfterDelete = getSession()
-                .createSQLQuery("SELECT * FROM courier_info WHERE courier_id=" + 16).addEntity(CourierInfoEntity.class);
+                .createSQLQuery("SELECT * FROM courier_info WHERE courier_id=" + 2).addEntity(CourierInfoEntity.class);
         Optional<CourierInfoEntity> courierInfoEntityAfterDelete = (Optional<CourierInfoEntity>) queryAfterDelete.uniqueResultOptional();
         Assertions.assertFalse(courierInfoEntityAfterDelete.isPresent());
     }

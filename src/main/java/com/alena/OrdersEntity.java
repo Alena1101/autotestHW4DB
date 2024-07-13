@@ -8,6 +8,7 @@ import java.util.Objects;
 public class OrdersEntity {
     private short orderId;
     private String dateGet;
+    private short customerId;
 
     @Id
     @Column(name = "order_id")
@@ -17,6 +18,16 @@ public class OrdersEntity {
 
     public void setOrderId(short orderId) {
         this.orderId = orderId;
+    }
+
+
+    @Column(name = "customer_id")
+    public short getCustomerId() {
+        return customerId;
+    }
+
+    public void setCustomerId(short customerId) {
+        this.customerId = customerId;
     }
 
     
