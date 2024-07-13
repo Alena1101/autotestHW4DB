@@ -7,6 +7,8 @@ import java.util.Objects;
 @Table(name = "delivery", schema = "main", catalog = "")
 public class DeliveryEntity {
     private short deliveryId;
+    private short orderId;
+    private short courierId;
     private String dateArrived;
     private String taken;
     private String paymentMethod;
@@ -21,7 +23,26 @@ public class DeliveryEntity {
         this.deliveryId = deliveryId;
     }
 
-    
+    @Column(name = "order_id")
+
+    public short getOrderId() {
+        return orderId;
+    }
+
+    public void setOrderId(short orderId) {
+        this.orderId = orderId;
+    }
+
+    @Column(name = "courier_id")
+
+    public short getCourierId() {
+        return courierId;
+    }
+
+    public void setCourierId(short courierId) {
+        this.courierId = courierId;
+    }
+
     @Column(name = "date_arrived")
     public String getDateArrived() {
         return dateArrived;
